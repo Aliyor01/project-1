@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edges">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+          <nav>
+            <img src="img/logo.png" class="logo">
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>  
+          <div class="header-text">
+            <p>Photografer and video maker</p>
+            <h1>Hi, I'm <span>Aliyor</span><br>From Uzbekistan</h1>
+          </div>
+        </div>
+    </div>
+
+    <!-- ----------about------------ --> 
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                   <img src="img/IMG_0400-2.JPG"> 
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About me</h1>
+                    <p>Hi there, I'm Aliyor, a creative photographer and video maker with a passion for capturing
+                         moments and telling stories through imagery. With 2 years behind the lens, I specialize in 
+                         crafting visually stunning narratives that leave a lasting impression</p>
+
+                         <div class="tab-titles" > 
+                            <p class ="tab-links active-link " onclick="opentab('skills')">Skills</p>
+                            <p class ="tab-links"onclick="opentab('experience')">Experience</p>
+                            <p class ="tab-links"onclick="opentab('education')">Education</p>
+                         </div>
+                         <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Photo/Video</span><br>Maker</li>
+                                <li><span>Photo/Video</span><br>Maker</li>
+                                <li><span>Photo/Video</span><br>Maker</li>
+                                
+                            </ul>
+                         </div>
+
+                         
+                         <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>Expertise ensures precise,</span><br>artistic moments.</li>
+                                <li><span>Storytelling through</span><br>captivating visuals.</li>
+                                <li><span>Collaboration for</span><br>exceeding expectations.</li>
+                                
+                            </ul>
+                         </div>
+
+
+                         <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>Personalized learning,</span><br>expert guidance.</li>
+                                <li><span>Interactive lessons</span><br>inspire critical thinking.</li>
+                                <li><span>Supportive environment</span><br>for academic growth.</li>
+                                
+                            </ul>
+                         </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-----------------------contact ------------------>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Have a question or want to discuss a project? Feel free to get in touch!</p>
+        
+        <form action="submit_form.php" method="post">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+          
+          <button type="submit">Send</button>
+        </form>
+      </section>
+      
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab")
+        } 
+
+    </script>
+</body>
+</html>
